@@ -1,0 +1,7 @@
+{:paths   ["src"]
+ :deps    {org.clojure/clojure         {:mvn/version "1.10.1"}
+           org.clojure/core.async      {:mvn/version "0.6.532"}
+           net.ttddyy/datasource-proxy {:mvn/version "1.6"}}
+ :aliases {:dev {:extra-deps {seancorfield/next.jdbc    {:mvn/version "1.0.13"}
+                              org.postgresql/postgresql {:mvn/version "42.2.5"}
+                              org.clojure/java.data     {:mvn/version "1.0.64"}}}}}
