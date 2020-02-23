@@ -23,7 +23,10 @@
                         :connectionId   :connection-id
                         :dataSourceName :datasource-name
                         :elapsedTime    :elapsed-time})
-      (update :statement str)))
+      (update :statement (fn [statement]
+                           (str (cond-> statement
+                                  (instance? java.sql.Wrapper statement)
+                                  (.unwrap java.lang.Object)))))))
 
 
 (defmethod ->clj QueryInfo
